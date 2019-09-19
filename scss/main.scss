@@ -1,0 +1,162 @@
+@import "config"; //_congif.scss file with variables
+@import "menu";
+@import "slider";
+
+// @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body {
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+  background: rgba(lighten($primary-color, 6), 0.7);
+  color: setTextColor($primary-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.text-second {
+  color: $secondary-color;
+}
+
+/*================ Menu Header ===========*/
+header {
+  position: fixed; //always on top
+  z-index: 2; //the bigger the number, the closer it is
+  width: 100%;
+}
+
+/*================ Headings ===========*/
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 800;
+
+  &.large-heading {
+    // large-heading is attached to h1
+    font-size: 4.2rem;
+    padding: 2rem !important;
+  }
+
+  &.small-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 6), 0.5);
+  }
+
+  &.x-small-heading {
+    margin-bottom: 1rem;
+    padding: 0.1rem 0.5rem;
+    background: rgba(lighten($secondary-color, 6), 0.5);
+  }
+}
+
+.heading {
+  color: rgba(lighten($tertiary-color, 6), 0.85);
+  padding: 2rem;
+}
+
+h3.heading {
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+}
+.heading-underline {
+  width: 6rem;
+  height: 0.3rem;
+  background-color: rgba(lighten($secondary-color, 6), 0.85);
+  margin: 0 auto 2rem;
+}
+
+/*================ Buttons ===========*/
+.btn {
+  border: 0;
+  margin-bottom: 0.3rem;
+
+  // &:hover{
+  //     background: $secondary-color;
+  // }
+}
+.large-btn {
+  background-color: rgba(darken($tertiary-color, 6), 0.85);
+  border-width: large;
+  border-radius: 5rem;
+  padding: 0.9rem 1.5rem;
+  white-space: normal;
+
+  @include easeOut;
+}
+
+.med-btn {
+  background-color: rgba(darken($secondary-color, 6), 0.85);
+  border-width: medium;
+  border-radius: 5rem;
+  padding: 0.6rem 1.1rem;
+  margin: 1rem;
+  @include easeOut;
+}
+
+.small-btn {
+  background-color: rgba(darken($secondary-color, 6), 0.85);
+  border-width: medium;
+  border-radius: 5rem;
+  padding: 0.3rem 0.75rem;
+  margin: 0.5rem;
+  @include easeOut;
+}
+
+/*================ Text Styles ===========*/
+
+.text-xl {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.text-md {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/*================ Footer ===========*/
+//For Most Pages
+#footer {
+  background-color: rgba(darken($primary-color, 6), 0.85);
+  color: #fff;
+  padding-top: 2rem 0 3rem;
+
+  img {
+    height: 3rem;
+    margin: 1.5rem 0;
+  }
+
+  hr.socket {
+    border-top: 0.2rem solid $secondary-color;
+    width: 100%;
+  }
+
+  //For Pages that don't have a page full of content
+  &.footer-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+  padding: 1rem;
+}
+
+@import "mobile"; //run after everything else is done
