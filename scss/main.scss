@@ -1,7 +1,7 @@
 @import "config"; //_congif.scss file with variables
 @import "menu";
 @import "slider";
-
+@import "simplelightbox";
 // @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 
 body {
@@ -9,7 +9,7 @@ body {
   font-family: "Roboto", sans-serif;
   background: rgba(lighten($primary-color, 6), 0.7);
   color: setTextColor($primary-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .text-second {
